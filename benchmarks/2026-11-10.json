@@ -1,0 +1,127 @@
+{
+  "date": "2026-11-10",
+  "implementation": "Python LuaJIT Decompiler",
+  "cpu": "AMD Ryzen 9 3900X",
+  "physical_cores": 12,
+  "logical_processors": 24,
+  "os": "Windows 10, 64-bit",
+  "python": "CPython 3.12.0, 64-bit",
+  "input_files": 9685,
+  "input_bytes": 125485092,
+  "flags": [
+    "-e",
+    ".luac",
+    "-m",
+    "-f"
+  ],
+  "baseline_sha256": "eaa6017e49fc7dafbc174fddc4bdb88aa2d2d31d934624683047b461ba13a0fa",
+  "optimized_benchmark_sha256": "e22d1fcdb59bb555a6e8ef4f865e3af620ddb2afa6d381ad6ec616d67c978e28",
+  "note": "Both versions are Python. Measurements precede standalone repository packaging. Bytecode inputs and generated outputs are not distributed.",
+  "method": {
+    "clock": "Unprofiled wall time for the complete CLI process",
+    "includes": [
+      "process startup",
+      "decompilation",
+      "output writes"
+    ],
+    "excludes": [
+      "cache preparation",
+      "output verification"
+    ],
+    "cache": "Warm input cache; overwrite the same output paths",
+    "console": "stdout and stderr redirected to log files",
+    "order": "One-process baseline then optimized; 12-process pairs alternate order"
+  },
+  "runs": [
+    {
+      "version": "baseline",
+      "workers": 1,
+      "repeat": 1,
+      "seconds": 223.38108379999176,
+      "returncode": 0,
+      "output_files": 9685
+    },
+    {
+      "version": "optimized",
+      "workers": 1,
+      "repeat": 1,
+      "seconds": 206.32563650002703,
+      "returncode": 0,
+      "output_files": 9685
+    },
+    {
+      "version": "baseline",
+      "workers": 12,
+      "repeat": 1,
+      "seconds": 27.373444300028495,
+      "returncode": 0,
+      "output_files": 9685
+    },
+    {
+      "version": "optimized",
+      "workers": 12,
+      "repeat": 1,
+      "seconds": 25.0507158000255,
+      "returncode": 0,
+      "output_files": 9685
+    },
+    {
+      "version": "optimized",
+      "workers": 12,
+      "repeat": 2,
+      "seconds": 25.14324470004067,
+      "returncode": 0,
+      "output_files": 9685
+    },
+    {
+      "version": "baseline",
+      "workers": 12,
+      "repeat": 2,
+      "seconds": 26.29785269999411,
+      "returncode": 0,
+      "output_files": 9685
+    },
+    {
+      "version": "baseline",
+      "workers": 12,
+      "repeat": 3,
+      "seconds": 26.679495300049894,
+      "returncode": 0,
+      "output_files": 9685
+    },
+    {
+      "version": "optimized",
+      "workers": 12,
+      "repeat": 3,
+      "seconds": 24.640124900033697,
+      "returncode": 0,
+      "output_files": 9685
+    }
+  ],
+  "summary": [
+    {
+      "workers": 1,
+      "median_seconds": {
+        "baseline": 223.38108379999176,
+        "optimized": 206.32563650002703
+      },
+      "speedup": 1.082662763528964,
+      "time_reduction_percent": 7.6351349943469815
+    },
+    {
+      "workers": 12,
+      "median_seconds": {
+        "baseline": 26.679495300049894,
+        "optimized": 25.0507158000255
+      },
+      "speedup": 1.0650192798092715,
+      "time_reduction_percent": 6.104986176486427
+    }
+  ],
+  "validation": {
+    "all_outputs_identical": true,
+    "string_comparisons": 159664,
+    "feature_output_comparisons": 199,
+    "feature_runtime_cases": 41472
+  }
+}

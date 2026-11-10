@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-10",
+  "check": "Standalone distribution compared with verified Python output",
+  "source_sha256": "d1799d66a0de2e918d236da8492cbedaa6fec2685604e57dc5f17177c327db28",
+  "input_files": 9685,
+  "output_files": 9685,
+  "different_outputs": 0,
+  "worker_processes": 12,
+  "flags": [
+    "-e",
+    ".luac",
+    "-m"
+  ],
+  "passed": true
+}

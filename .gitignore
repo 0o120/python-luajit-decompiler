@@ -1,0 +1,26 @@
+# Generated Python files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Bytecode, generated output, and local measurements
+*.luac
+*.log
+*.pstats
+/output/
+/decoded/
+/bytecode/
+/expected/
+/benchmark-results*/
+/benchmark-serial*/
+/baseline.py
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
